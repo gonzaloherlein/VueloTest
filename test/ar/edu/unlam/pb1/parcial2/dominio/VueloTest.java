@@ -56,19 +56,21 @@ public class VueloTest {
 	
 	@Test
 	public void queSeOrdeneListaDePasajerosPorDNI() {
-		Vuelo vuelo = new Vuelo("as","as");
-		ArrayList<Pasajero> pasajeros=new ArrayList();
+		ArrayList<Pasajero> pasajeros=new ArrayList<Pasajero>();
 		Pasajero pasajero = new Pasajero(2);
 		Pasajero pasajero2 = new Pasajero(1);
 		Pasajero pasajero3 = new Pasajero(3);
+		
 		pasajeros.add(pasajero);
 		pasajeros.add(pasajero2);
 		pasajeros.add(pasajero3);
 		
 		Collections.sort(pasajeros);
 		
-		assertEquals(pasajero.getDni(), pasajeros.get(0).getDni()); 
 		
+		assertEquals(pasajero2.getDni(), pasajeros.get(0).getDni());
+		assertEquals(pasajero.getDni(), pasajeros.get(1).getDni());
+		assertEquals(pasajero3.getDni(), pasajeros.get(2).getDni());
 		
 		
 		

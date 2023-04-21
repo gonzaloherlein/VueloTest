@@ -79,15 +79,11 @@ public class Vuelo {
 		 */
 		
 		if(pasajeros!=null) {
-			for(int i=0;i<this.CANTIDAD_DE_FILAS;i++) {
-				for (int j = 0; j < this.CANTIDAD_DE_ASIENTOS_POR_FILA; j++) {
-					if(asientos[fila][columna]==null) {
-						asientos[fila][columna]=pasajero;
-						return true;
-					}
+			if(verificarDisponibilidadAsiento(fila, columna)) {
+					asientos[fila][columna]=pasajero;
+					return true;
 				}
 			}
-		}
 		return false;
 		
 	}

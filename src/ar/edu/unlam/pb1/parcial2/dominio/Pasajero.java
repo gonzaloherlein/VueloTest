@@ -45,6 +45,7 @@ public class Pasajero implements Comparable<Pasajero>{
 		this.nombre = nombre;
 	}
 	
+	@Override
 	public String toString() {
 		return "Pasajero [dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido + "]";
 	}

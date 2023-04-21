@@ -9,7 +9,7 @@ import org.junit.Test;
 
 public class VueloTest {
 	
-//	 queSpuedaBuscaarUnAeropuertoPorCodigo
+//	 	queSpuedaBuscaarUnAeropuertoPorCodigo
 //	    queSpuedaBuscaarUnAeropuertoPorNombre
 //	    queSepuedaCambiarLaDireccionDeUnAeropuerto
 //	    

@@ -13,23 +13,30 @@ public class Vuelo {
 
 	private String origen;
 	private String destino;
-	private ArrayList<Pasajero> pasajeros;
-	private Pasajero[][] asientos;
+	private ArrayList<Pasajero> pasajeros = new ArrayList<>();
+	private Pasajero[][] asientos = new Pasajero[CANTIDAD_DE_FILAS][CANTIDAD_DE_ASIENTOS_POR_FILA];
 
+	
+	public Vuelo() {
+		
+	}
 
 	public Vuelo(String origen, String destino) {
 		this.origen = origen;
 		this.destino = destino;
-		this.pasajeros = new ArrayList();
+		this.pasajeros = new ArrayList<Pasajero>();
 		this.asientos = new Pasajero[CANTIDAD_DE_FILAS][CANTIDAD_DE_ASIENTOS_POR_FILA];
 	}
+	
+	
 
 	public boolean agregarPasajero(Pasajero pasajero) {
 		
-		return pasajeros.add(pasajero);
+		
 		/*
 		 * Incorpora un nuevo pasajero a la lista de pasajeros del avi�n. Devuelve true si se pudo agregar o false si la capacidad del vuelo se encuentra completa.
 		 */
+		return pasajeros.add(pasajero);
 		
 	}
 
@@ -90,6 +97,7 @@ public class Vuelo {
 		/*
 		 * Ordena la lista de pasajeros por DNI.
 		 */
+		
 	    Collections.sort(pasajeros);
 	}
 	

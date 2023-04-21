@@ -11,7 +11,7 @@ public class Checkin {
 		
 		System.out.println("Bienvenido ");
 		int CantidadPasajero = 189;
-		//Vuelo vuelo = new Vuelo("Buenos Aires", "Bariloche", CantidadPasajero);
+		Vuelo vuelo = new Vuelo();
 
 		int opcion = 0;
 		do {
@@ -27,7 +27,7 @@ public class Checkin {
 				listarPasajeros(vuelo);
 				break;
 			default:
-				System.out.println("Opci�n Invalida");
+				System.out.println("Opcion Invalida");
 				break;
 			}
 
@@ -61,7 +61,23 @@ public class Checkin {
 		Scanner teclado = new Scanner(System.in);
 		String nombre, apellido;
 		int dni;
-
+		
+		System.out.println("Ingrese el dni del pasajero: ");
+		dni = teclado.nextInt();
+		
+		System.out.println("Ingrese el nombre del pasajero: ");
+		nombre = teclado.next();
+		
+		System.out.println("Ingrese el apellido del pasajero: ");
+		apellido = teclado.next();
+		
+		Pasajero pasajero = new Pasajero(dni,nombre,apellido);
+		
+		if(actual.agregarPasajero(pasajero)) {
+			System.out.println("Se ha registrado correctamente");
+		}else {
+			System.out.println("Vuelva a intentarlo");
+		}
 	}
 	
 	private static void elegirAsiento(Vuelo actual) {
@@ -74,6 +90,24 @@ public class Checkin {
 		int dni, fila, columna;
 		Pasajero pasajeroASentar;
 		
+		System.out.println("Ingrese el dni del pasajero: ");
+		dni = teclado.nextInt();
+		
+		pasajeroASentar = actual.buscarPasajero(dni);
+		
+		System.out.println("Asigne la fila del asiento: ");
+		fila = teclado.nextInt();
+		
+		System.out.println("Asigne la columna del asiento: ");
+		columna = teclado.nextInt();
+		
+		if(actual.asignarAsiento(pasajeroASentar, fila, columna)) {
+			System.out.println("Ha elegido asiento correctamente");
+		}else {
+			System.out.println("No se ha podido elegir asiento correctamente");
+		}
+		
+		
 	}
 
 	private static void listarPasajeros(Vuelo actual) {
@@ -81,6 +115,7 @@ public class Checkin {
 		/*
 		 * Se debe mostrar la lista de pasajeros registrados para este vuelo ordenados por DNI
 		 */
+		actual.getPasajeros().toString();
 		
 	}
 }

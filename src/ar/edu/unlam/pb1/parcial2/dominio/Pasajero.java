@@ -1,6 +1,6 @@
 package ar.edu.unlam.pb1.parcial2.dominio;
 
-public  class Pasajero implements Comparable<Pasajero>{
+public class Pasajero implements Comparable<Pasajero>{
 	
 	private Integer dni;
 	private String nombre;
@@ -17,9 +17,9 @@ public  class Pasajero implements Comparable<Pasajero>{
 		this.apellido = apellido;
 	}
 	
-	public Pasajero(int i) {
-		this.dni=i;
-		// TODO Auto-generated constructor stub
+	public Pasajero(int dni) {
+		this.dni=dni;
+		
 	}
 
 	public String getApellido() {
